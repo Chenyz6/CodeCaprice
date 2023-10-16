@@ -20,20 +20,26 @@ using namespace std;
 输入：target = 11, nums = [1, 1, 1, 1, 1, 1, 1, 1]
 输出：0
 */
-class Solution {
+
+// 超出时间限制
+class Solution1 {
 public:
-	int minSubArrayLen(int target, vector<int>& nums) { // 2, 3, 1, 2, 4, 3
-		int length = 0, sum = 0, min = 0;
+	int minSubArrayLen(int target, vector<int>& nums) { // 2, 3, 1, 2, 4, 3    -  7
+		int length = 0, sum = 0, min = 0, tag = 0;
 		for (int i = 0; i < nums.size(); i++){
 			sum = 0;
 			length = 0;
-			for (int j = 0; j < nums.size(); j++) {
+			for (int j = i; j < nums.size(); j++) {
 				sum += nums[j];
 				length++;
 				if (sum >= target) {
+					if (tag == 0) {
+						min = length;
+						tag++;
+					}
 					if (length < min) {
 						min = length;
-					}
+					};
 					break;
 				}
 			}
@@ -42,10 +48,29 @@ public:
 	}
 };
 
+// 双指针 滑动窗口
+class Solution {
+public:
+	int minSubArrayLen(int target, vector<int>& nums) { // 2, 3, 1, 2, 4, 3    -  7
+		int left = 0, sum = 0, minResult = INT32_MAX, subLength = 0; // subLength 滑动窗口的长度
+		for (int right = 0; right < nums.size(); right++)
+		{
+			sum += nums[right];
+			while (sum >= target)
+			{
+				subLength = (right - left + 1);
+				minResult = minResult < subLength ? minResult : subLength;
+				sum -= nums[left++];
+			}
+		}
+		return minResult == INT32_MAX ? 0 : minResult; // 如果result没有被赋值的话，就返回0，说明没有符合条件的子序列
+	}
+};
+
 int main()
 {
 	Solution s;
-	vector <int> v = { 2,3,1,2,4,3 };
+	vector <int> v = { 2, 3, 1, 2, 4, 3 };
 	cout << s.minSubArrayLen(7, v);
 	system("pause");
 }

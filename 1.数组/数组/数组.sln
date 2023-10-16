@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3-977.有序数组的平方
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "4-209.长度最小的子数组", "4-209.长度最小的子数组\4-209.长度最小的子数组.vcxproj", "{B54C2A77-9A8B-41F5-8484-8D213E76A456}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "5-59.螺旋矩阵Ⅱ", "5-59.螺旋矩阵Ⅱ\5-59.螺旋矩阵Ⅱ.vcxproj", "{B19B1F62-AB79-40EF-AFBB-E492C92EAB71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{B54C2A77-9A8B-41F5-8484-8D213E76A456}.Release|x64.Build.0 = Release|x64
 		{B54C2A77-9A8B-41F5-8484-8D213E76A456}.Release|x86.ActiveCfg = Release|Win32
 		{B54C2A77-9A8B-41F5-8484-8D213E76A456}.Release|x86.Build.0 = Release|Win32
+		{B19B1F62-AB79-40EF-AFBB-E492C92EAB71}.Debug|x64.ActiveCfg = Debug|x64
+		{B19B1F62-AB79-40EF-AFBB-E492C92EAB71}.Debug|x64.Build.0 = Debug|x64
+		{B19B1F62-AB79-40EF-AFBB-E492C92EAB71}.Debug|x86.ActiveCfg = Debug|Win32
+		{B19B1F62-AB79-40EF-AFBB-E492C92EAB71}.Debug|x86.Build.0 = Debug|Win32
+		{B19B1F62-AB79-40EF-AFBB-E492C92EAB71}.Release|x64.ActiveCfg = Release|x64
+		{B19B1F62-AB79-40EF-AFBB-E492C92EAB71}.Release|x64.Build.0 = Release|x64
+		{B19B1F62-AB79-40EF-AFBB-E492C92EAB71}.Release|x86.ActiveCfg = Release|Win32
+		{B19B1F62-AB79-40EF-AFBB-E492C92EAB71}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
