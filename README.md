@@ -1,6 +1,3 @@
 # CodeCaprice
 
 programmercarl.com
-
-
-
