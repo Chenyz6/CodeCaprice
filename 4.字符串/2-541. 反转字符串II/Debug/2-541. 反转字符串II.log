@@ -1,0 +1,5 @@
+﻿  源.cpp
+C:\Users\Administrator\source\repos\4.字符串\2-541. 反转字符串II\源.cpp(11,21): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Administrator\source\repos\4.字符串\2-541. 反转字符串II\源.cpp(13,14): warning C4018: “<=”: 有符号/无符号不匹配
+C:\Users\Administrator\source\repos\4.字符串\2-541. 反转字符串II\源.cpp(29,15): warning C4101: “a”: 未引用的局部变量
+  2-541. 反转字符串II.vcxproj -> C:\Users\Administrator\source\repos\4.字符串\Debug\2-541. 反转字符串II.exe
