@@ -21,17 +21,17 @@ string reverse1(string str)
 {
 	string s;
 	while (cin >> s) {
-		int count = 0; // Í³¼ÆÊý×ÖµÄ¸öÊý
+		int count = 0; // ç»Ÿè®¡æ•°å­—çš„ä¸ªæ•°
 		int sOldSize = s.size();
 		for (int i = 0; i < s.size(); i++) {
 			if (s[i] >= '0' && s[i] <= '9') {
 				count++;
 			}
 		}
-		// À©³ä×Ö·û´®sµÄ´óÐ¡£¬Ò²¾ÍÊÇÃ¿¸ö¿Õ¸ñÌæ»»³É"number"Ö®ºóµÄ´óÐ¡
+		// æ‰©å……å­—ç¬¦ä¸²sçš„å¤§å°ï¼Œä¹Ÿå°±æ˜¯æ¯ä¸ªç©ºæ ¼æ›¿æ¢æˆ"number"ä¹‹åŽçš„å¤§å°
 		s.resize(s.size() + count * 5);
 		int sNewSize = s.size();
-		// ´ÓºóÏÈÇ°½«¿Õ¸ñÌæ»»Îª"number"
+		// ä»ŽåŽå…ˆå‰å°†ç©ºæ ¼æ›¿æ¢ä¸º"number"
 		for (int i = sNewSize - 1, j = sOldSize - 1; j < i; i--, j--) {
 			if (s[j] > '9' || s[j] < '0') {
 				s[i] = s[j];

@@ -16,5 +16,14 @@ public:
 
 int main()
 {
-	system("pause");
+	string s = "abcdefg";
+	vector<char> v(s.begin(),s.end());
+	Solution so;
+	so.reverseString(v);
+	for(int i = 0; i < v.size(); i++)
+	{
+		cout << v[i];
+	}
+	cout << endl;
+	return 0;
 }

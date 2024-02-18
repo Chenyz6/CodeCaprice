@@ -28,5 +28,5 @@ int main()
 	auto at = (int)22 + (long long)44;
 	decltype(at) a;
 	cout << typeid(at).name();
-	system("pause");
+	return 0;
 }
