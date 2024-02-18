@@ -1,4 +1,0 @@
-﻿  源.cpp
-C:\Users\Administrator\source\repos\4.字符串\3-替换数字\源.cpp(9,20): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Administrator\source\repos\4.字符串\3-替换数字\源.cpp(26,21): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Administrator\source\repos\4.字符串\3-替换数字\源.cpp(51): error C4716: “reverse1”: 必须返回一个值
