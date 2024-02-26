@@ -32,7 +32,7 @@ public:
         int start = 0;
         for(int i = 0; i <= s.size(); i++){ // 要包含数组最后一个位置  因为反转的是闭区间 
             if(s[i] == ' ' || i == s.size()){
-                reverse(s, start, i - 1); 
+                reverse(s, start, i - 1);
                 start = i + 1;
             }
         }
