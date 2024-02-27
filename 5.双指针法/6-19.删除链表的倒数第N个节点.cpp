@@ -16,7 +16,7 @@ public:
         ListNode* pre = head;
         ListNode* end = head;
         for(int i = 0; i < n; i++){
-            end = end->next;
+            end = end->next; 
         }
         if(end == nullptr)  // 处理长度为n，删除倒数第n个的情况
         {
@@ -35,3 +35,8 @@ public:
         return head;
     }
 };
+
+int main()
+{
+    return 0;
+}
