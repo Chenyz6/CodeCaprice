@@ -1,11 +1,15 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <stack>
 using namespace std;
 
 int main()
 {
-    string str = "ab cd efg";
-    cout << str.substr(3,2) << endl;  // de
+    stack<int> st;
+    st.push(222);
+    cout << st.top() << endl;
+    st.pop();
+    cout << st.top() << endl;
     return 0;
 }
