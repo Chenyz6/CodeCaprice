@@ -2,14 +2,17 @@
 #include <vector>
 #include <string>
 #include <stack>
+#include <unordered_set>
 using namespace std;
 
 int main()
 {
-    stack<int> st;
-    st.push(222);
-    cout << st.top() << endl;
-    st.pop();
-    cout << st.top() << endl;
+    unordered_set<int> uset;
+    uset.insert(20);
+    cout << uset.size() << endl;
+    uset.insert(20);
+    cout << uset.size() << endl;
+    uset.insert(30);
+    cout << uset.size() << endl;
     return 0;
 }
