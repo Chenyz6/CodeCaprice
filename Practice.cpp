@@ -2,7 +2,11 @@
 #include <vector>
 #include <string>
 #include <stack>
+#include <queue>
+#include <deque>
 #include <unordered_set>
+#include <map>
+#include <algorithm>
 using namespace std;
 
 int main()
