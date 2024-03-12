@@ -29,7 +29,7 @@ public:
         else if(left == nullptr && right == nullptr) return true;
         else if(left->val != right->val) return false;
 
-        bool outside = compare(left->left, right->right);
+        bool outside = compare(left->left, right->right);  // 比较的是整颗树
         bool inside = compare(left->right, right->left);
         return outside && inside;
     }
