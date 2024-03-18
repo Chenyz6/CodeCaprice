@@ -15,16 +15,18 @@ public:
             result.push_back(str);
             return;
         }
-        if(startIndex >= digits.size()) return;
         int digit = digits[startIndex] - '0'; 
         string s = map[digit];
-        for(int i = startIndex; i < s.size(); i++){
-            str += s[i];
-            backtracking(digits, i + 1);
+        for(int i = 0; i < s.size(); i++){
+            str.push_back(s[i]);
+            backtracking(digits, startIndex + 1);
             str.pop_back();
         }
     }
     vector<string> letterCombinations(string digits) {
+        if (digits.size() == 0) {
+            return result;
+        }
         backtracking(digits, 0);
         return result;
     }

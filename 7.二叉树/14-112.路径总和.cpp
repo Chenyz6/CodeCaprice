@@ -73,7 +73,7 @@ public:
     }
 };
 
-// 迭代器方式
+// 迭代方式
 class Solution {
 public:
     stack<pair<TreeNode*, int>> st;
@@ -81,7 +81,20 @@ public:
         if(root == nullptr) return false;
         st.push(make_pair(root, root->val));
         while(!st.empty()){
-            
+            pair<TreeNode*, int> pa = st.top();
+            st.pop();
+            if(pa.first->left == nullptr && pa.first->right == nullptr){
+                if(pa.second == targetSum){
+                    return true;
+                }
+            }
+            if(pa.first->right){
+                st.push(make_pair(pa.first->right, pa.second + pa.first->right->val));
+            }
+            if(pa.first->left){
+                st.push(make_pair(pa.first->left, pa.second + pa.first->left->val));
+            }
         }
+        return false;
     }
 };
