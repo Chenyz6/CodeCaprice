@@ -24,9 +24,20 @@ struct TreeNode {
 class Solution {
 public:
     int getDepth(TreeNode* node){
-        
+        if(node == nullptr) return 0;
+        int leftDepth = getDepth(node->left);
+        int rightDepth = getDepth(node->right);
+        if(node->left == nullptr && node->right != nullptr){
+            return ++rightDepth;
+        }
+        if(node->left != nullptr && node->right == nullptr){
+            return ++leftDepth;
+        }
+        int result = 1 + min(leftDepth, rightDepth);
+        return result;
     }
     int minDepth(TreeNode* root) {
-
+        if(root == nullptr) return 0;
+        return getDepth(root);
     }   
 };

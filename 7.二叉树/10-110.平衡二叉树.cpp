@@ -20,12 +20,21 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
+// 递归方式
 class Solution {
 public:
+    int getDepth(TreeNode* node) {
+        if(node == nullptr) return 0;
+        int leftDepth = getDepth(node->left);
+        if(leftDepth == -1) return -1;
+        int rightDepth = getDepth(node->right);
+        if(rightDepth == -1) return -1;
+        int num = abs(leftDepth - rightDepth); // abs求绝对值
+        if(num > 1) return -1;
+        return max(leftDepth, rightDepth) + 1;
+    }
     bool isBalanced(TreeNode* root) {
-        int getDepth(TreeNode* node) {
-            if(node == nullptr) return 0;
-        }
+        if(-1 == getDepth(root)) return false;
         return true;
     }
 };

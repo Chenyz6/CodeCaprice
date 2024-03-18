@@ -9,34 +9,15 @@
 #include <algorithm>
 #include <memory>
 using namespace std;
-class Test
+
+void Test()
 {
-public:
-    Test() 
-    {
-        cout << "construct Test..." << endl;
-    }
-    Test(int x) 
-    {
-        cout << "construct Test, x = " << x << endl;
-    }
-    Test(string str) 
-    {
-        cout << "construct Test, str = " << str << endl;
-    }
-    ~Test()
-    {
-        cout << "destruct Test ..." << endl;
-    }
-};
+    shared_ptr<int> ptr(new int[10],[](int * p) {delete []p; });     
+    cout << "ptr---" << ptr.use_count() << endl;   
+}
 
 int main()
 {
-    shared_ptr<int> ptr(new int[10]);
-    cout << "ptr---" << ptr.use_count() << endl;
-    int * pt = ptr.get();
-    pt[0] = 1000;
-    cout << "ptr---" << ptr.use_count() << endl;
-
+    Test();
     return 0;
 }
