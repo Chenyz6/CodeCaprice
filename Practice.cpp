@@ -12,8 +12,13 @@ using namespace std;
 
 void Test()
 {
-    shared_ptr<int> ptr(new int[10],[](int * p) {delete []p; });     
-    cout << "ptr---" << ptr.use_count() << endl;   
+    vector<int> v {1,2,3,4,5,6};
+
+    vector<int> vv (v.begin(), v.begin() + 3); 
+
+    for(int i = 0 ; i < vv.size(); i++){
+        cout << vv[i] << " ";
+    }
 }
 
 int main()
