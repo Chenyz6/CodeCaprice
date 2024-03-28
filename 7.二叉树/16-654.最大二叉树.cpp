@@ -21,10 +21,6 @@ struct TreeNode {
 };
 
 class Solution {
-private:
-    int max = INT32_MIN;
-    int maxIndex = INT32_MIN;
-    
 public:
     TreeNode* traversal(vector<int>& nums){
         TreeNode * node = new TreeNode;
@@ -32,6 +28,8 @@ public:
             node->val = nums[0];
             return node;
         }
+        int max = INT32_MIN;
+        int maxIndex = INT32_MIN;
         for(int i = 0; i < nums.size(); i++){
             if(nums[i] > max){
                 max = nums[i];
@@ -39,11 +37,11 @@ public:
             }
         }
         node->val = max;       
-        if(maxIndex >= 0){
+        if(maxIndex > 0){  // 确保有一个值
             vector<int> left(nums.begin(), nums.begin() + maxIndex);  
             node->left = traversal(left);
         }
-        if(maxIndex < nums.size()){
+        if(maxIndex < nums.size() - 1){
             vector<int> right(nums.begin() + maxIndex + 1, nums.end());  
             node->right = traversal(right);
         }
