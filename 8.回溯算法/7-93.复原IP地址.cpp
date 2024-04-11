@@ -12,7 +12,7 @@ private:
     vector<string> result;
 public:
     bool isValid(string& s, int begin, int end){
-        if (begin > end) {
+        if (begin > end) {   // 注意到到最后的位置会越过数组下标的位置
             return false;
         }
         if (s[begin] == '0' && begin != end) { 
