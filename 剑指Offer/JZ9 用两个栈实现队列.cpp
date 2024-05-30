@@ -1,8 +1,7 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
 #include <stack>
-#include <queue>
+#include <algorithm>
 using namespace std;
 
 struct ListNode {
@@ -26,6 +25,34 @@ struct TreeLinkNode {
     struct TreeLinkNode *right;
     struct TreeLinkNode *next;
     TreeLinkNode(int x) :val(x), left(NULL), right(NULL), next(NULL) {}
+};
+
+class Solution
+{
+public:
+    void push(int node) {
+        stack1.push(node);
+    }
+
+    int pop() {
+        if(!stack2.empty()){
+            int result = stack2.top();
+            stack2.pop();
+            return result;
+        }else{
+            while (!stack1.empty()){
+                stack2.push(stack1.top());
+                stack1.pop();
+            }
+            int result = stack2.top();
+            stack2.pop();
+            return result;
+        }
+    }
+
+private:
+    stack<int> stack1; // 进
+    stack<int> stack2; // 出
 };
 
 int main()
