@@ -29,10 +29,28 @@ public:
     }
 };
 
+// 替换
+class Solution2 {
+public:
+    int duplicate(vector<int>& numbers) {
+        for(int i = 0; i < numbers.size(); i++){
+            if(numbers[i] >= numbers.size() || numbers[i] < 0)return -1;
+            while (numbers[i] != i){
+                if(numbers[i] == numbers[numbers[i]]) return numbers[i];
+                int temp;
+                temp = numbers[i]; 
+                numbers[i] = numbers[numbers[i]]; 
+                numbers[temp] = temp;
+            }
+        }
+        return -1;
+    }
+};
+
 int main()
 {
     vector<int> temp{6,3,2,0,2,5,0};
-    Solution s;
+    Solution2 s;
     cout << s.duplicate(temp) << endl;
     return 0;
 }

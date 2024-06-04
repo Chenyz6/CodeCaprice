@@ -10,7 +10,8 @@ struct ListNode {
         val(x), next(NULL) {
     }
 };
-
+// 用栈来实现  遍历先进栈  输出时再出栈
+// 可以用递归每次输出后面的节点
 class Solution {
 public:
     vector<int> printListFromTailToHead(ListNode* head) {

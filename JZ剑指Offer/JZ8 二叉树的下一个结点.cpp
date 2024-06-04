@@ -49,6 +49,30 @@ public:
     }
 };
 
+// 官方题解   直接寻找 !!!!
+class Solution1 {
+public:
+    TreeLinkNode* GetNext(TreeLinkNode* pNode) {
+        if(pNode == nullptr) return nullptr;
+        TreeLinkNode* temp = pNode;
+        if(temp->right != nullptr){
+            temp = temp->right;
+            while (temp->left != nullptr){
+                temp = temp->left;
+            }
+            return temp;
+        }else if(temp->next != nullptr){
+            TreeLinkNode* pParent = temp->next;
+            while(pParent != nullptr && pParent->right == temp){
+                temp = pParent;
+                pParent = pParent->next;
+            }
+            return pParent;
+        }
+        return nullptr;
+    }
+};
+
 int main()
 {
     return 0;
