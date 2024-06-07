@@ -29,28 +29,29 @@ struct TreeLinkNode {
     TreeLinkNode(int x) :val(x), left(NULL), right(NULL), next(NULL) {}
 };
 
+/**
+ * struct ListNode {
+ *	int val;
+ *	struct ListNode *next;
+ *	ListNode(int x) : val(x), next(nullptr) {}
+ * };
+ */
 class Solution {
 public:
-    ListNode* deleteNode(ListNode* head, int val) {
-        while(head->val == val){
-            ListNode* temp = head;
-            head = head->next;
-            delete temp;
-            temp = nullptr;
+    ListNode* FindKthToTail(ListNode* pHead, int k) {
+        if(pHead == nullptr) return nullptr;
+        if(k == 0) return nullptr;
+        ListNode* begin = pHead;
+        ListNode* end = begin;
+        for(int i = 0; i < k - 1; i++){
+            end = end->next;
         }
-        ListNode* pre = nullptr;
-        ListNode* cur = head;
-        while (cur != nullptr) {
-            if(cur->val == val){
-                pre->next = cur->next;
-                delete cur;
-                cur = nullptr;
-            }else{
-                pre = cur;
-                cur = cur->next;
-            }
+        if(end == nullptr) return nullptr;
+        while (end->next != nullptr) {
+            begin = begin->next;
+            end = end->next;
         }
-        return head;
+        return begin;
     }
 };
 

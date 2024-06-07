@@ -29,28 +29,27 @@ struct TreeLinkNode {
     TreeLinkNode(int x) :val(x), left(NULL), right(NULL), next(NULL) {}
 };
 
+/**
+ * struct ListNode {
+ *	int val;
+ *	struct ListNode *next;
+ *	ListNode(int x) : val(x), next(nullptr) {}
+ * };
+ */
 class Solution {
 public:
-    ListNode* deleteNode(ListNode* head, int val) {
-        while(head->val == val){
-            ListNode* temp = head;
-            head = head->next;
-            delete temp;
-            temp = nullptr;
-        }
+    ListNode* ReverseList(ListNode* head) {
+        if(head == nullptr) return nullptr;
         ListNode* pre = nullptr;
         ListNode* cur = head;
-        while (cur != nullptr) {
-            if(cur->val == val){
-                pre->next = cur->next;
-                delete cur;
-                cur = nullptr;
-            }else{
-                pre = cur;
-                cur = cur->next;
-            }
+        ListNode* temp =nullptr;
+        while(cur != nullptr){
+            temp = cur->next;
+            cur->next = pre;
+            pre = cur;
+            cur = temp;
         }
-        return head;
+        return pre;
     }
 };
 

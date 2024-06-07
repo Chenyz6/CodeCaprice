@@ -31,26 +31,18 @@ struct TreeLinkNode {
 
 class Solution {
 public:
-    ListNode* deleteNode(ListNode* head, int val) {
-        while(head->val == val){
-            ListNode* temp = head;
-            head = head->next;
-            delete temp;
-            temp = nullptr;
+    ListNode* Merge(ListNode* pHead1, ListNode* pHead2) {
+        if(pHead1 == nullptr) return pHead2;
+        if(pHead2 == nullptr) return pHead1;
+        ListNode* mergeHead = nullptr;
+        if(pHead1->val < pHead2->val){
+            mergeHead = pHead1;
+            mergeHead->next = Merge(pHead1->next, pHead2);
+        }else{
+            mergeHead = pHead2;
+            mergeHead->next = Merge(pHead1, pHead2->next);
         }
-        ListNode* pre = nullptr;
-        ListNode* cur = head;
-        while (cur != nullptr) {
-            if(cur->val == val){
-                pre->next = cur->next;
-                delete cur;
-                cur = nullptr;
-            }else{
-                pre = cur;
-                cur = cur->next;
-            }
-        }
-        return head;
+        return mergeHead;
     }
 };
 

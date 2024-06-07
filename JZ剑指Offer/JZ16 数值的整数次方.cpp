@@ -36,9 +36,9 @@ public:
         if(exponent == 1) return base;
 
         int result = 1.0;
-        result = Power(base, exponent >> 1);
+        result = Power(base, exponent >> 1); // 位运算优化
         result *= result;
-        if(exponent & 1) result *= base;
+        if(exponent & 1) result *= base; // 注意是base
         return result;
     }
 };
