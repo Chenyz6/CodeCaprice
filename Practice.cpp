@@ -24,5 +24,6 @@ void Test()
 int main()
 {
     Test();
+    cout << "添加脚本自动上传"
     return 0;
 }
