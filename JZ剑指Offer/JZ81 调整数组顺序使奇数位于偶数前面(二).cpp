@@ -31,38 +31,24 @@ struct TreeLinkNode {
     TreeLinkNode(int x) :val(x), left(NULL), right(NULL), next(NULL) {}
 };
 
-
-/*
-struct ListNode {
-    int val;
-    struct ListNode *next;
-    ListNode(int x) :
-        val(x), next(NULL) {
-    }
-};
-*/
 class Solution {
 public:
-    ListNode* deleteDuplication(ListNode* pHead) {
-        if(pHead == nullptr) return nullptr;
-        ListNode* res = new ListNode(0);
-        res->next = pHead;
-        ListNode* cur = res;
-        while(cur->next != nullptr && cur->next->next != nullptr){
-            if(cur->next->val == cur->next->next->val){
-                int temp = cur->next->val;
-                while(cur->next != nullptr && cur->next->val == temp){
-                    cur->next = cur->next->next;
-                }
-            }else {
-                cur = cur->next;
+    vector<int> reOrderArrayTwo(vector<int>& array) {
+        if(array.size() == 0) return {};
+        // write code here
+        int left = 0, right = array.size() - 1;
+        while(left < right){
+            while(left < right && array[left] % 2 == 1){  
+                left++;
+            }                
+            while(left < right && array[right] % 2 == 0){ 
+                right--;
             }
+            swap(array[left++], array[right--]);
         }
-        return res->next;
+        return array;
     }
 };
-
-
 
 int main()
 {
